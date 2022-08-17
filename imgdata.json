@@ -1,0 +1,36 @@
+{
+    "images": [
+        {
+            "title": "hey",
+            "bgcolor": "white",
+            "textlist": [
+                {
+                    "textstr": "red hat",
+                    "textcolor": "red",
+                    "font": "opensansfont"
+                },
+                {
+                    "textstr": "blue jacket",
+                    "textcolor": "black",
+                    "font": "opensansfont"
+                }
+            ]
+        },
+        {
+            "title": "hoi",
+            "bgcolor": "black",
+            "textlist": [
+                {
+                    "textstr": "yellow hat",
+                    "textcolor": "yellow",
+                    "font": "opensansfont"
+                },
+                {
+                    "textstr": "orange jacket",
+                    "textcolor": "white",
+                    "font": "opensansfont"
+                }
+            ]
+        }
+    ]
+}
