@@ -6,7 +6,8 @@ import PIL.Image
 
 import json
 
-# Font selection from the downloaded file
+#TODO: Load fonts automatically by searching paths
+# LOAD FONTS
 opensansfont = ImageFont.truetype('OpenSans-Regular.ttf', 160)
 FONTREGISTRY = {'opensansfont': opensansfont}
 class TextWriter:
@@ -52,5 +53,9 @@ class Image:
 images = list(Image.loadfromjson('imgdata.json'))
 print(images)
 
+import os
+if not os.path.exists('results'):
+    os.makedirs('results')
+
 for image in images:
-    image.draw().save(f'{image.title}.jpeg')
+    image.draw().save(f'results/{image.title}.jpeg')
