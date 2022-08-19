@@ -6,12 +6,7 @@ import json
 
 from src.genimage import * # replace *
 
-#TODO: Load fonts automatically by searching paths
-# LOAD FONTS
-opensansfont = ImageFont.truetype('OpenSans-Regular.ttf', 160)
-FONTREGISTRY = {'opensansfont': opensansfont}
-
-images = list(Image.loadfromjson('imgdata.json', FONTREGISTRY))
+images = list(Image.loadfromjson('imgdata.json'))
 print(images)
 
 import os

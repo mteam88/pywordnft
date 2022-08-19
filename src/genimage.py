@@ -2,6 +2,8 @@ from PIL import ImageDraw, ImageFont
 import PIL.Image
 import json
 
+from .loadfonts import FONTREGISTRY
+
 class TextWriter:
     def __init__(self, font: ImageFont) -> None:
         self.font = font
@@ -23,11 +25,11 @@ class Image:
         self.text = text
         self.bgcolor = bgcolor
     @staticmethod
-    def loadfromjson(jsonfile, fontregistry):
+    def loadfromjson(jsonfile):
         with open(jsonfile) as f:
             imagesdata = json.load(f)
         for imagedata in imagesdata['images']:
-            yield Image(imagedata['title'], [Text(textdata['textstr'], textdata['textcolor'], fontregistry[textdata['font']]) for textdata in imagedata['textlist']], imagedata['bgcolor'])
+            yield Image(imagedata['title'], [Text(textdata['textstr'], textdata['textcolor'], FONTREGISTRY[textdata['font']]) for textdata in imagedata['textlist']], imagedata['bgcolor'])
     
     def draw(self):
         img = PIL.Image.new('RGB', (2500, 2500), color=self.bgcolor)
