@@ -1,6 +1,9 @@
-from PIL import ImageFont
+from PIL import ImageFont, _imagingft
+from os import getcwd
+import glob
+import itertools
 
-#TODO: Load fonts automatically by searching paths
 # LOAD FONTS
-opensansfont = ImageFont.truetype('OpenSans-Regular.ttf', 160)
-FONTREGISTRY = {'opensansfont': opensansfont}
+cwd = getcwd() # not used
+for file in itertools.chain(glob.glob("*.ttf"), glob.glob("*.otf")):
+    FONTREGISTRY = {file: ImageFont.FreeTypeFont(file, size=160)} # add to not overwrite
