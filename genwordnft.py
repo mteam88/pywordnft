@@ -1,7 +1,3 @@
-# Import Image for basic functionalities like open, save, show
-# Import ImageDraw to convert image into editable format
-# Import ImageFont to choose the font style
-
 import json
 
 from pywordnft.genimage import * # replace *
