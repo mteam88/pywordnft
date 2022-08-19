@@ -2,7 +2,7 @@ from PIL import ImageDraw, ImageFont
 import PIL.Image
 import json
 
-from .params import DEFAULT_TEXT_SIZE
+from .params import DEFAULT_TEXT_SIZE, DEFAULT_LEFT_MARGIN, DEFAULT_TOP_MARGIN
 
 from .loadfonts import FONTREGISTRY
 
@@ -37,7 +37,7 @@ class Image:
         img = PIL.Image.new('RGB', (2500, 2500), color=self.bgcolor)
         twreg = {fontobj:TextWriter(fontobj) for fontstr, fontobj in FONTREGISTRY.items()} # TextWriters for each font in FONTREGISTRY
         for i, text in enumerate(self.text):
-            twreg[text.font].write(img, text.textstr, (60, i*DEFAULT_TEXT_SIZE+140), color=text.textcolor)
+            twreg[text.font].write(img, text.textstr, (DEFAULT_LEFT_MARGIN, i*DEFAULT_TEXT_SIZE+DEFAULT_TOP_MARGIN), color=text.textcolor)
         return img
 
     def __repr__(self):
