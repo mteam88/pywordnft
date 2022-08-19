@@ -4,7 +4,7 @@
 
 import json
 
-from src.genimage import * # replace *
+from pywordnft.genimage import * # replace *
 
 images = list(Image.loadfromjson('imgdata.json'))
 print(images)
